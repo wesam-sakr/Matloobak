@@ -78,7 +78,34 @@ $(document).ready(function () {
     }
   })
 
-  $(".same-products .owl-carousel").owlCarousel({
+  $('.adv-assets .owl-carousel').on('initialized.owl.carousel changed.owl.carousel', function (e) {
+    if (!e.namespace) {
+      return;
+    }
+    var carousel = e.relatedTarget;
+    $('.slider-counter .len').html(`${carousel.items().length}`)
+    $('.slider-counter .current').html(`${carousel.relative(carousel.current()) + 1}`)
+  }).owlCarousel({
+    loop: true,
+    autoplay: true,
+    margin: 16,
+    dots: true,
+    rtl: dirAr,
+    responsive: {
+      0: {
+        items: 2,
+        margin: 8,
+      },
+      768: {
+        items: 2
+      },
+      998: {
+        items: 1
+      }
+    }
+  })
+
+  $(".related-adv .owl-carousel").owlCarousel({
     loop: true,
     autoplay: true,
     margin: 16,
@@ -91,10 +118,10 @@ $(document).ready(function () {
         margin: 8,
       },
       768: {
-        items: 4
+        items: 2
       },
       998: {
-        items: 5
+        items: 3
       }
     }
   })

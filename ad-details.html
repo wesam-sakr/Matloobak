@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مطلوبك</title>
+    <link rel="icon" type="image/x-icon" href="images/logo.svg" />
+    <link rel="stylesheet" href="css/bootstrap.rtl.min.css" />
+    <link rel="stylesheet" href="css/bootstrap-icons.min.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="css/nice-select.css" />
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <!-- ======== scroll top ======== -->
+    <a href="javascript:void(0)" id="scroll-top">
+      <i class="bi bi-chevron-up"></i>
+    </a>
+
+    <!-- ======== loading ======== -->
+    <section id="loading">
+      <div class="logo-spinner-wrapper">
+        <div class="spinner"></div>
+        <img src="images/logo.svg" alt="Logo" class="center-logo" />
+      </div>
+    </section>
+
+    <!-- ======== header ======== -->
+    <header>
+      <!-- ======== 1. Top Bar ======== -->
+      <div class="top-bar">
+        <div
+          class="container-fluid d-flex align-items-center justify-content-between"
+        >
+          <ul class="nav">
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                href="common-que.html"
+                aria-label="الأسئلة الشائعة"
+                >الأسئلة الشائعة</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" aria-label="الشروط والأحكام"
+                >الشروط والأحكام</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact-us.html" aria-label="تواصل معنا"
+                >تواصل معنا</a
+              >
+            </li>
+          </ul>
+          <!-- if auth -->
+          <ul
+            class="auth d-flex align-items-center justify-content-center gap-md-2 gap-1"
+          >
+            <li>
+              <a href="chat.html" aria-label="سجل المحادثات">
+                <i class="bi bi-chat-dots"></i>
+                <span class="count-num">2</span>
+              </a>
+            </li>
+            <li>
+              <a href="notifications.html" aria-label="الاشعارات">
+                <i class="bi bi-bell"></i>
+                <span class="count-num">4</span>
+              </a>
+            </li>
+            <li>
+              <a href="profile.html" class="user" aria-label="حسابي">
+                <i class="bi bi-person-fill"></i>
+              </a>
+            </li>
+          </ul>
+          <!-- else *remove class d-none* -->
+          <a
+            href="login.html"
+            class="d-none main d-flex align-items-center gap-1"
+          >
+            <i class="bi bi-person-fill"></i>
+            <span class="">تسجيل الدخول</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- ======== 2. Bottom Bar ======== -->
+      <div class="bottom-bar">
+        <div
+          class="container-fluid d-flex flex-md-nowrap flex-wrap gap-2 align-items-center justify-content-between"
+        >
+          <!-- logo -->
+          <div class="logo">
+            <a
+              class="navbar-brand d-flex align-items-center gap-2 m-0"
+              href="index.html"
+              aria-label="الصفحة الرئيسية"
+            >
+              <img src="images/logo.svg" alt="مطلوبك" />
+            </a>
+          </div>
+
+          <!-- search form -->
+          <form class="search-box" role="search">
+            <label for="category-search" class="sr-only">اختر الفئة</label>
+            <select name="category" id="category-search">
+              <option>الفئات</option>
+            </select>
+
+            <label for="search-input" class="sr-only">ابحث عن منتج</label>
+            <input type="search" id="search-input" placeholder=" البحث" />
+
+            <button type="submit" aria-label="ابحث">
+              <i class="bi bi-search"></i>
+            </button>
+          </form>
+
+          <div class="d-flex align-items gap-3">
+            <!-- change language -->
+            <a href="" class="lang d-flex align-items-center gap-1" id="lang">
+              <span class="small">ENGLISH</span>
+              <i class="bi bi-globe"></i>
+            </a>
+            <!-- add advertisement -->
+            <a href="add-adv.html" class="main-btn"> إضافة إعلان </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- ======== 3. category Bar ======== -->
+      <div class="category-bar">
+        <div
+          class="container-fluid d-flex align-items-center justify-content-center"
+        >
+          <!-- main nav -->
+          <nav
+            class="navbar navbar-expand-lg navbar-light p-0"
+            aria-label="القائمة الرئيسية"
+          >
+            <!-- nav list -->
+            <div class="" id="primaryNavbar">
+              <ul class="nav">
+                <li class="nav-item">
+                  <a href="#" class="nav-link" aria-label="الكل">
+                    <img src="images/border-all.svg" alt="" />
+                    الكل
+                  </a>
+                </li>
+
+                <li class="nav-item">
+                  <a href="#" class="nav-link" aria-label="خدمات">
+                    <img src="images/holding-hand-delivery.svg" alt="" />
+                    خدمات
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link" aria-label="سلع">
+                    <img src="images/products.svg" alt="" />
+                    سلع
+                  </a>
+                </li>
+                <li class="nav-item">
+                  <a href="#" class="nav-link" aria-label="متخصصين">
+                    <img src="images/specislies.svg" alt="" />
+                    متخصصين
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section class="container-fluid">
+      <nav style="--bs-breadcrumb-divider: '>>'" aria-label="breadcrumb">
+        <ol class="breadcrumb pt-4">
+          <li class="breadcrumb-item">
+            <a href="index.html" class="main">الرئيسية</a>
+          </li>
+          <li class="breadcrumb-item active" aria-current="page">
+            مطلوب تكييف
+          </li>
+        </ol>
+      </nav>
+    </section>
+
+    <main>
+      <!-- ======== advs details section ======== -->
+      <section class="my-5">
+        <div class="container-fluid">
+          <div class="main-section row g-3">
+            <div class="main-side col-md-8">
+              <div class="adv-details">
+                <!-- main info -->
+                <div class="advertisements">
+                  <div class="card">
+                    <div class="card-body">
+                      <div
+                        class="d-flex align-items-center justify-content-between gap-3 mb-3"
+                      >
+                        <h2 class="ad-title main fs-5 fw-semibold">
+                          مطلوب مكيف شباك
+                        </h2>
+                        <div class="d-flex gap-2">
+                          <button role="button" class="share">
+                            <i class="bi bi-share"></i>
+                          </button>
+                          <a role="button" class="fav">
+                            <i class="bi bi-heart"></i>
+                          </a>
+                        </div>
+                      </div>
+                      <div class="col-md-12">
+                        <div class="ad-info row row-cols-3 g-3">
+                          <div class="col">
+                            <i class="bi bi-grid"></i>
+                            <span>الأجهزة الكهربائية</span>
+                          </div>
+                          <div class="col">
+                            <i class="bi bi-chat-dots"></i>
+                            <span>18 تعليق</span>
+                          </div>
+                          <div class="col">
+                            <i class="bi bi-geo-alt"></i>
+                            <span>الرياض</span>
+                          </div>
+                          <div class="col">
+                            <i class="bi bi-person"></i>
+                            <span>25 مشاهدة</span>
+                          </div>
+                          <div class="col">
+                            <i class="bi bi-clock"></i>
+                            <span>منذ 3 ساعات</span>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- description -->
+                <div class="description my-4">
+                  <h3 class="fs-5 main mb-3">التفاصيل</h3>
+                  <p>
+                    محتاج تكييف شباك أو سبليت بقوة 2 طن لاستخدام منزلي، ويُفضّل
+                    من ماركة LG أو Samsung علشان جودة التبريد. لازم يكون بحالة
+                    ممتازة سواء جديد أو مستخدم استعمال خفيف، ويُفضّل جداً لو فيه
+                    ضمان ساري أو حتى فاتورة شراء. متاح للشراء خلال يومين من أي
+                    مكان داخل [اسم المدينة]، بشرط يكون في توصيل أو إمكانية
+                    للمعاينة قبل الشراء. ياريت اللي عنده نفس المواصفات أو قريب
+                    منها يرسل التفاصيل كاملة مع السعر النهائي، وصور حقيقية
+                    للجهاز
+                  </p>
+                </div>
+                <!-- assets -->
+                <div class="adv-assets position-relative my-3">
+                  <div class="owl-carousel">
+                    <img src="images/product.png" alt="" />
+                    <img src="images/product.png" alt="" />
+                    <video src="images/vid.mp4" controls></video>
+                  </div>
+                  <div class="slider-counter-wrapper">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      version="1.1"
+                      xmlns:xlink="http://www.w3.org/1999/xlink"
+                      width="512"
+                      height="512"
+                      x="0"
+                      y="0"
+                      viewBox="0 0 64 64"
+                      style="enable-background: new 0 0 512 512"
+                      xml:space="preserve"
+                      class=""
+                    >
+                      <g>
+                        <path
+                          d="M57.72 4.192H26.965a2.293 2.293 0 0 0-2.28 2.29v24.156a2.293 2.293 0 0 0 2.28 2.29H57.72a2.293 2.293 0 0 0 2.28-2.29V6.482a2.293 2.293 0 0 0-2.28-2.29zm-7.76 16.194-12.067 6.892a2.113 2.113 0 0 1-3.148-1.827V11.668a2.113 2.113 0 0 1 3.148-1.826l12.067 6.892a2.115 2.115 0 0 1 0 3.652z"
+                          fill="#FFFFFF"
+                          opacity="1"
+                          data-original="#000000"
+                          class=""
+                        ></path>
+                        <path
+                          d="M22.667 30.638v-4.894H6.37A2.375 2.375 0 0 0 4 28.115V47.57l4.42-4.49a4.177 4.177 0 0 1 5.216-.444l6.306 5.005a.593.593 0 0 0 .727-.182l7.113-8.415a4.217 4.217 0 0 1 6.529-.152l6.013 7.629V34.946H26.965a4.31 4.31 0 0 1-4.298-4.308zM10.8 36.389c-5.076-.131-5.066-7.567 0-7.699a3.85 3.85 0 0 1 0 7.7z"
+                          fill="#FFFFFF"
+                          opacity="1"
+                          data-original="#000000"
+                          class=""
+                        ></path>
+                        <path
+                          d="m29.356 40.294-7.113 8.415a2.57 2.57 0 0 1-3.491.555l-6.307-4.994a2.143 2.143 0 0 0-2.623.262L4 50.445v6.992a2.375 2.375 0 0 0 2.371 2.371h31.582a2.375 2.375 0 0 0 2.371-2.37v-7.66l-7.577-9.615a2.202 2.202 0 0 0-3.39.131zM8.974 32.545a1.832 1.832 0 0 0 3.663 0 1.832 1.832 0 0 0-3.663 0zM36.853 11.578a.11.11 0 0 0-.05.01l-.04 13.863.13.081 12.068-6.891v-.162l-12.067-6.891c-.01-.01-.02-.01-.04-.01z"
+                          fill="#FFFFFF"
+                          opacity="1"
+                          data-original="#000000"
+                          class=""
+                        ></path>
+                      </g>
+                    </svg>
+                    <div class="slider-counter">
+                      <span class="current"></span>
+                      <span class="">/</span>
+                      <span class="len"></span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- adv comments -->
+              <div class="adv-comments mt-4">
+                <div class="user-comment-container">
+                  <div class="user-comment">
+                    <div
+                      class="d-flex align-items-center justify-content-between mb-2"
+                    >
+                      <div class="d-flex align-items-center gap-2">
+                        <div class="avatar">
+                          <img src="images/wesam.jpg" alt="" />
+                        </div>
+                        <div class="comment-details">
+                          <h6 class="main">وسام صقر</h6>
+                        </div>
+                      </div>
+                      <div class="d-flex align-items-center main gap-1">
+                        <small class="bi bi-clock"></small>
+                        <small>منذ 30 دقيقة</small>
+                      </div>
+                    </div>
+                    <p class="comment">
+                      هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة
+                      ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل
+                      توضع الفقرات في الصفحة التي يقرأها
+                    </p>
+
+                    <div class="comment-action d-flex gap-2 mt-3">
+                        <button class="main-btn py-0 rounded-1" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                          <i class="bi bi-arrow-90deg-left"></i>
+                          الرد
+                        </button>
+                        <a href="chat.html" class="main-outline-btn py-0 rounded-1">
+                          <i class="bi bi-chat-dots"></i>
+                          مراسلة
+                        </a>
+                    </div>
+                  </div>
+                  <div class="replaies collapse" id="collapseExample">
+                    <div class="user-comment">
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-2"
+                      >
+                        <div class="d-flex align-items-center gap-2">
+                          <div class="avatar">
+                            <img src="images/avatar.png" alt="" />
+                          </div>
+                          <div class="comment-details">
+                            <h6 class="main">مجهول الهوية</h6>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center main gap-1">
+                          <small class="bi bi-clock"></small>
+                          <small>منذ 30 دقيقة</small>
+                        </div>
+                      </div>
+                      <p class="comment">
+                        هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
+                        لصفحة ما سيلهي القارئ عن الأجهزة
+                      </p>
+                    </div>
+                    <div class="user-comment">
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-2"
+                      >
+                        <div class="d-flex align-items-center gap-2">
+                          <div class="avatar">
+                            <img src="images/avatar.png" alt="" />
+                          </div>
+                          <div class="comment-details">
+                            <h6 class="main">مجهول الهوية</h6>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center main gap-1">
+                          <small class="bi bi-clock"></small>
+                          <small>منذ 30 دقيقة</small>
+                        </div>
+                      </div>
+                      <p class="comment">
+                        هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
+                        لصفحة ما سيلهي القارئ عن الأجهزة
+                      </p>
+                    </div>
+                    <div class="user-comment">
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-2"
+                      >
+                        <div class="d-flex align-items-center gap-2">
+                          <div class="avatar">
+                            <img src="images/avatar.png" alt="" />
+                          </div>
+                          <div class="comment-details">
+                            <h6 class="main">مجهول الهوية</h6>
+                          </div>
+                        </div>
+                        <div class="d-flex align-items-center main gap-1">
+                          <small class="bi bi-clock"></small>
+                          <small>منذ 30 دقيقة</small>
+                        </div>
+                      </div>
+                      <p class="comment">
+                        هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
+                        لصفحة ما سيلهي القارئ عن الأجهزة
+                      </p>
+                    </div>
+                    <div class="msg-reply py-3 border-top">
+                      <form action="">
+                        <input type="text" class="form-control p-3 mb-3">
+                        <button class="main-btn">
+                          إرسال
+                        </button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="sticky-side col-md-4">
+              <div class="card">
+                <div class="card-body">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Voluptate totam, sunt odio quidem et illum quam cum commodi
+                  minus velit.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="my-5">
+        <div class="container-fluid">
+          <div class="title fw-bold fs-5 mb-3">إعلانات مشابهة</div>
+          <div class="related-adv advertisements">
+            <div class="owl-carousel">
+              <div class="card flex-column-reverse">
+                <a href="ad-details.html" class="link"></a>
+                <div class="card-body">
+                  <div class="row align-items-center g-3">
+                    <div class="col">
+                      <div class="d-flex align-items-center gap-3 mb-3">
+                        <h2 class="ad-title main fs-5 fw-semibold">
+                          مطلوب مكيف شباك
+                        </h2>
+                        <a role="button" class="fav">
+                          <i class="bi bi-heart"></i>
+                        </a>
+                      </div>
+                      <div
+                        class="ad-info d-flex flex-wrap align-items-center gap-md-3 gap-1"
+                      >
+                        <div class="">
+                          <i class="bi bi-chat-dots"></i>
+                          <span>18 تعليق</span>
+                        </div>
+                        <div class="">
+                          <i class="bi bi-geo-alt"></i>
+                          <span>الرياض</span>
+                        </div>
+                        <div class="">
+                          <i class="bi bi-person"></i>
+                          <span>25 مشاهدة</span>
+                        </div>
+                        <div class="">
+                          <i class="bi bi-clock"></i>
+                          <span>منذ 3 ساعات</span>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-12 col-sm-auto">
+                      <div class="adv-img">
+                        <img src="images/product.png" alt="" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ======== subscribe section ======== -->
+    <section class="subscribe py-4">
+      <div class="container-fluid py-2">
+        <div class="row gy-3 align-items-center">
+          <div class="col-md-6">
+            <div class="d-flex align-items-center gap-3 subscribe-info">
+              <i class="bi bi-envelope-fill fs-1"></i>
+              <p class="fw-bold fs-5 mb-0">اشترك في النشرة الإخبارية لدينا</p>
+            </div>
+          </div>
+          <div class="col-md-6">
+            <form action>
+              <div class="d-flex gap-2 w-100">
+                <input
+                  type="email"
+                  class="form-control bg-transparent"
+                  placeholder="البريد الإلكتروني"
+                />
+                <button class="subscribe_btn form-control w-auto">
+                  اشتراك
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======== footer ======== -->
+    <footer>
+      <div class="container-fluid">
+        <div class="row gy-4 justify-content-between">
+          <div class="col-lg-4">
+            <div class="logo mb-3">
+              <a
+                class="navbar-brand d-flex align-items-center gap-2 m-0"
+                href="index.html"
+                aria-label="الصفحة الرئيسية"
+              >
+                <img src="images/logo.svg" alt="مطلوبك" />
+              </a>
+            </div>
+            <p class="description">
+              هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة ما
+              سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل توضع الفقرات
+              في الصفحة التي يقرأها. ولذلك يتم استخدام طريقة لوريم إيبسوم
+            </p>
+            <nav aria-label="Social Media Links">
+              <ul class="social-icons">
+                <li>
+                  <a
+                    href=""
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="تويتر"
+                  >
+                    <i class="fa-brands fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href=""
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="إنستاجرام"
+                  >
+                    <i class="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href=""
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="لينكدإن"
+                  >
+                    <i class="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href=""
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label="فيسبوك"
+                  >
+                    <i class="fa-brands fa-x-twitter"></i>
+                  </a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="col-lg-2 col-md-3 col-6">
+            <h5>خريطة الموقع</h5>
+            <ul class="">
+              <li>
+                <a href="index.html" aria-label="الرئيسية">الرئيسية</a>
+              </li>
+              <li>
+                <a href="index.html" aria-label="أحدث الإعلانات"
+                  >أحدث الإعلانات</a
+                >
+              </li>
+              <li>
+                <a href="add-adv.html" aria-label="إضافة إعلان">إضافة إعلان</a>
+              </li>
+              <li>
+                <a href="contact-us.html" aria-label="التواصل">التواصل</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-lg-2 col-md-3 col-6">
+            <h5>الدعم الفني</h5>
+            <ul>
+              <li>
+                <a href="login.html" aria-label="التسجيل">التسجيل</a>
+              </li>
+              <li>
+                <a href="profile.html" aria-label="الصفحة الشخصية"
+                  >الصفحة الشخصية</a
+                >
+              </li>
+              <li>
+                <a href="common-que.html" aria-label="المساعدة">المساعدة</a>
+              </li>
+              <li>
+                <a href="terms.html" aria-label="سياسة الخصوصية"
+                  >سياسة الخصوصية</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="col-md-auto">
+            <h5>يمكنك تحميل التطبيق</h5>
+            <div class="apps-btns d-flex flex-column">
+              <a href="" target="_blank" class="main-btn">
+                <div>
+                  <span>حمل الان</span>
+                  <h5>App store</h5>
+                </div>
+                <img loading="lazy" src="images/apple.svg" alt="apple link" />
+              </a>
+              <a href="" target="_blank">
+                <div>
+                  <span>حمل الان</span>
+                  <h5>Google play</h5>
+                </div>
+                <img
+                  loading="lazy"
+                  src="images/GooglePlay.png"
+                  alt="GooglePlay link"
+                />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- jQuery script -->
+    <script src="js/jquery-3.6.0.min.js"></script>
+
+    <!-- bootstrap script -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+
+    <!-- owl-carousel script -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <!-- nice select script -->
+    <script src="js/jquery.nice-select.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+
+    <!-- custom js file link  -->
+    <script src="js/script.js"></script>
+
+    <script>
+      // Initialize all tooltips on the page
+      document.addEventListener("DOMContentLoaded", function () {
+        const tooltipTriggerList = [].slice.call(
+          document.querySelectorAll('[data-bs-toggle="tooltip"]')
+        );
+        const tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+          return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+      });
+    </script>
+  </body>
+</html>
