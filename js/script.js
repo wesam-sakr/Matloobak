@@ -88,21 +88,11 @@ $(document).ready(function () {
   }).owlCarousel({
     loop: true,
     autoplay: true,
+    items: 1,
     margin: 16,
     dots: true,
     rtl: dirAr,
-    responsive: {
-      0: {
-        items: 2,
-        margin: 8,
-      },
-      768: {
-        items: 2
-      },
-      998: {
-        items: 1
-      }
-    }
+    
   })
 
   $(".related-adv .owl-carousel").owlCarousel({
@@ -114,7 +104,7 @@ $(document).ready(function () {
     rtl: dirAr,
     responsive: {
       0: {
-        items: 2,
+        items: 1,
         margin: 8,
       },
       768: {

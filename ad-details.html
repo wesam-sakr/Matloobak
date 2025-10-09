@@ -8,13 +8,7 @@
     <link rel="icon" type="image/x-icon" href="images/logo.svg" />
     <link rel="stylesheet" href="css/bootstrap.rtl.min.css" />
     <link rel="stylesheet" href="css/bootstrap-icons.min.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
-      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="css/nice-select.css" />
     <link rel="stylesheet" href="css/owl.carousel.min.css" />
     <link rel="stylesheet" href="css/owl.theme.default.min.css" />
@@ -114,12 +108,10 @@
 
           <!-- search form -->
           <form class="search-box" role="search">
-            <label for="category-search" class="sr-only">اختر الفئة</label>
             <select name="category" id="category-search">
               <option>الفئات</option>
             </select>
 
-            <label for="search-input" class="sr-only">ابحث عن منتج</label>
             <input type="search" id="search-input" placeholder=" البحث" />
 
             <button type="submit" aria-label="ابحث">
@@ -202,6 +194,7 @@
       <section class="my-5">
         <div class="container-fluid">
           <div class="main-section row g-3">
+            <!-- adv side -->
             <div class="main-side col-md-8">
               <div class="adv-details">
                 <!-- main info -->
@@ -224,7 +217,7 @@
                         </div>
                       </div>
                       <div class="col-md-12">
-                        <div class="ad-info row row-cols-3 g-3">
+                        <div class="ad-info row row-cols-lg-3 row-cols-md-2 row-cols-2 g-3">
                           <div class="col">
                             <i class="bi bi-grid"></i>
                             <span>الأجهزة الكهربائية</span>
@@ -319,52 +312,140 @@
               </div>
               <!-- adv comments -->
               <div class="adv-comments mt-4">
-                <div class="user-comment-container">
-                  <div class="user-comment">
-                    <div
-                      class="d-flex align-items-center justify-content-between mb-2"
-                    >
-                      <div class="d-flex align-items-center gap-2">
-                        <div class="avatar">
-                          <img src="images/wesam.jpg" alt="" />
+                <div class="all-comments">
+                  <!-- first comment -->
+                  <div class="user-comment-container">
+                    <div class="user-comment">
+                      <div
+                        class="d-flex align-items-center justify-content-between mb-2"
+                      >
+                        <div class="d-flex align-items-center gap-2">
+                          <div class="avatar">
+                            <img src="images/wesam.jpg" alt="" />
+                          </div>
+                          <div class="comment-details">
+                            <p class="main">وسام صقر</p>
+                          </div>
                         </div>
-                        <div class="comment-details">
-                          <h6 class="main">وسام صقر</h6>
+                        <div class="d-flex align-items-center main gap-1">
+                          <small class="bi bi-clock"></small>
+                          <small>منذ 30 دقيقة</small>
                         </div>
                       </div>
-                      <div class="d-flex align-items-center main gap-1">
-                        <small class="bi bi-clock"></small>
-                        <small>منذ 30 دقيقة</small>
-                      </div>
-                    </div>
-                    <p class="comment">
-                      هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء لصفحة
-                      ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص أو شكل
-                      توضع الفقرات في الصفحة التي يقرأها
-                    </p>
+                      <p class="comment">
+                        هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
+                        لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص
+                        أو شكل توضع الفقرات في الصفحة التي يقرأها
+                      </p>
 
-                    <div class="comment-action d-flex gap-2 mt-3">
-                        <button class="main-btn py-0 rounded-1" data-bs-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">
+                      <div class="comment-action d-flex gap-2 mt-3">
+                        <button
+                          class="main-btn py-0 rounded-1"
+                          data-bs-toggle="collapse"
+                          href="#collapseExample"
+                          role="button"
+                          aria-expanded="false"
+                          aria-controls="collapseExample"
+                        >
                           <i class="bi bi-arrow-90deg-left"></i>
                           الرد
                         </button>
-                        <a href="chat.html" class="main-outline-btn py-0 rounded-1">
+                        <a
+                          href="chat.html"
+                          class="main-outline-btn py-0 rounded-1"
+                        >
                           <i class="bi bi-chat-dots"></i>
                           مراسلة
                         </a>
+                      </div>
+                    </div>
+                    <div class="replaies collapse" id="collapseExample">
+                      <div class="user-comment">
+                        <div
+                          class="d-flex align-items-center justify-content-between mb-2"
+                        >
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="avatar">
+                              <img src="images/avatar.png" alt="" />
+                            </div>
+                            <div class="comment-details">
+                              <p class="main">مجهول الهوية</p>
+                            </div>
+                          </div>
+                          <div class="d-flex align-items-center main gap-1">
+                            <small class="bi bi-clock"></small>
+                            <small>منذ 30 دقيقة</small>
+                          </div>
+                        </div>
+                        <p class="comment">
+                          هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
+                          لصفحة ما سيلهي القارئ عن الأجهزة
+                        </p>
+                      </div>
+                      <div class="user-comment">
+                        <div
+                          class="d-flex align-items-center justify-content-between mb-2"
+                        >
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="avatar">
+                              <img src="images/avatar.png" alt="" />
+                            </div>
+                            <div class="comment-details">
+                              <p class="main">مجهول الهوية</p>
+                            </div>
+                          </div>
+                          <div class="d-flex align-items-center main gap-1">
+                            <small class="bi bi-clock"></small>
+                            <small>منذ 30 دقيقة</small>
+                          </div>
+                        </div>
+                        <p class="comment">
+                          هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
+                          لصفحة ما سيلهي القارئ عن الأجهزة
+                        </p>
+                      </div>
+                      <div class="user-comment">
+                        <div
+                          class="d-flex align-items-center justify-content-between mb-2"
+                        >
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="avatar">
+                              <img src="images/avatar.png" alt="" />
+                            </div>
+                            <div class="comment-details">
+                              <p class="main">مجهول الهوية</p>
+                            </div>
+                          </div>
+                          <div class="d-flex align-items-center main gap-1">
+                            <small class="bi bi-clock"></small>
+                            <small>منذ 30 دقيقة</small>
+                          </div>
+                        </div>
+                        <p class="comment">
+                          هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
+                          لصفحة ما سيلهي القارئ عن الأجهزة
+                        </p>
+                      </div>
+                      <div class="msg-reply py-3 border-top">
+                        <form action="">
+                          <input type="text" class="form-control p-3 mb-3" />
+                          <button class="main-btn">إرسال</button>
+                        </form>
+                      </div>
                     </div>
                   </div>
-                  <div class="replaies collapse" id="collapseExample">
+                  <!-- second comment -->
+                  <div class="user-comment-container">
                     <div class="user-comment">
                       <div
                         class="d-flex align-items-center justify-content-between mb-2"
                       >
                         <div class="d-flex align-items-center gap-2">
                           <div class="avatar">
-                            <img src="images/avatar.png" alt="" />
+                            <img src="images/wesam.jpg" alt="" />
                           </div>
                           <div class="comment-details">
-                            <h6 class="main">مجهول الهوية</h6>
+                            <p class="main">وسام صقر</p>
                           </div>
                         </div>
                         <div class="d-flex align-items-center main gap-1">
@@ -374,71 +455,154 @@
                       </div>
                       <p class="comment">
                         هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
-                        لصفحة ما سيلهي القارئ عن الأجهزة
+                        لصفحة ما سيلهي القارئ عن التركيز على الشكل الخارجي للنص
+                        أو شكل توضع الفقرات في الصفحة التي يقرأها
                       </p>
-                    </div>
-                    <div class="user-comment">
-                      <div
-                        class="d-flex align-items-center justify-content-between mb-2"
-                      >
-                        <div class="d-flex align-items-center gap-2">
-                          <div class="avatar">
-                            <img src="images/avatar.png" alt="" />
-                          </div>
-                          <div class="comment-details">
-                            <h6 class="main">مجهول الهوية</h6>
-                          </div>
-                        </div>
-                        <div class="d-flex align-items-center main gap-1">
-                          <small class="bi bi-clock"></small>
-                          <small>منذ 30 دقيقة</small>
-                        </div>
-                      </div>
-                      <p class="comment">
-                        هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
-                        لصفحة ما سيلهي القارئ عن الأجهزة
-                      </p>
-                    </div>
-                    <div class="user-comment">
-                      <div
-                        class="d-flex align-items-center justify-content-between mb-2"
-                      >
-                        <div class="d-flex align-items-center gap-2">
-                          <div class="avatar">
-                            <img src="images/avatar.png" alt="" />
-                          </div>
-                          <div class="comment-details">
-                            <h6 class="main">مجهول الهوية</h6>
-                          </div>
-                        </div>
-                        <div class="d-flex align-items-center main gap-1">
-                          <small class="bi bi-clock"></small>
-                          <small>منذ 30 دقيقة</small>
-                        </div>
-                      </div>
-                      <p class="comment">
-                        هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
-                        لصفحة ما سيلهي القارئ عن الأجهزة
-                      </p>
-                    </div>
-                    <div class="msg-reply py-3 border-top">
-                      <form action="">
-                        <input type="text" class="form-control p-3 mb-3">
-                        <button class="main-btn">
-                          إرسال
+
+                      <div class="comment-action d-flex gap-2 mt-3">
+                        <button
+                          class="main-btn py-0 rounded-1"
+                          data-bs-toggle="collapse"
+                          href="#collapseExample2"
+                          role="button"
+                          aria-expanded="false"
+                          aria-controls="collapseExample"
+                        >
+                          <i class="bi bi-arrow-90deg-left"></i>
+                          الرد
                         </button>
-                      </form>
+                        <a
+                          href="chat.html"
+                          class="main-outline-btn py-0 rounded-1"
+                        >
+                          <i class="bi bi-chat-dots"></i>
+                          مراسلة
+                        </a>
+                      </div>
+                    </div>
+                    <div class="replaies collapse" id="collapseExample2">
+                      <div class="user-comment">
+                        <div
+                          class="d-flex align-items-center justify-content-between mb-2"
+                        >
+                          <div class="d-flex align-items-center gap-2">
+                            <div class="avatar">
+                              <img src="images/avatar.png" alt="" />
+                            </div>
+                            <div class="comment-details">
+                              <p class="main">مجهول الهوية</p>
+                            </div>
+                          </div>
+                          <div class="d-flex align-items-center main gap-1">
+                            <small class="bi bi-clock"></small>
+                            <small>منذ 30 دقيقة</small>
+                          </div>
+                        </div>
+                        <p class="comment">
+                          هناك حقيقة مثبتة منذ زمن طويل وهي أن المحتوى المقروء
+                          لصفحة ما سيلهي القارئ عن الأجهزة
+                        </p>
+                      </div>
+                      <div class="msg-reply py-3 border-top">
+                        <form action="">
+                          <input type="text" class="form-control p-3 mb-3" />
+                          <button class="main-btn">إرسال</button>
+                        </form>
+                      </div>
                     </div>
                   </div>
                 </div>
+                <div class="add-comment">
+                  <form action="">
+                    <textarea
+                      name=""
+                      id=""
+                      rows="3"
+                      class="form-control bg-transparent"
+                    ></textarea>
+                    <button class="main-btn mt-3">إرسال</button>
+                  </form>
+                </div>
               </div>
             </div>
+            <!-- Advertiser info side -->
             <div class="sticky-side col-md-4">
-              <div class="card">
+              <!-- Advertiser info -->
+              <div class="card border-0 mb-3">
                 <div class="card-body">
-                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                  Voluptate totam, sunt odio quidem et illum quam cum commodi
-                  minus velit.
+                  <div class="title fw-bold fs-6 mb-2">مطلوب بواسطة</div>
+                  <div class="d-flex align-items-center gap-2 mb-3">
+                    <div class="advertiser-img">
+                      <img src="images/wesam.jpg" alt="" />
+                    </div>
+                    <div class="advertiser-name">
+                      <p class="">وسام صقر</p>
+                      <a class="main text-decoration-underline">زيارة الملف الشخصي</a>
+                    </div>
+                  </div>
+                  <!-- Advertiser contact -->
+                  <div class="title fw-bold fs-6 mb-3">
+                    تواصل مع صاحب الإعلان عن طريق
+                  </div>
+                  <div class="advertiser-contacts d-flex w-100 gap-3">
+                    <a
+                      href="https://api.whatsapp.com/send?phone="
+                      class="ad-contact bg-success bg-opacity-10 text-success"
+                    >
+                      <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+                    <a
+                      href=""
+                      class="ad-contact bg-dark bg-opacity-10 text-dark"
+                    >
+                      <i class="fa-regular fa-comment-dots"></i>
+                    </a>
+                    <a
+                      href="mailto:"
+                      class="ad-contact bg-primary bg-opacity-10 text-primary"
+                    >
+                      <i class="fa-regular fa-envelope"></i>
+                    </a>
+                    <a
+                      role="button"
+                      class="ad-contact bg-danger bg-opacity-10 text-danger"
+                      data-bs-toggle="modal"
+                      data-bs-target="#exampleModal"
+                    >
+                      <i class="fa-regular fa-font-awesome"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <!-- warning -->
+              <div class="card border-0">
+                <div class="card-body">
+                  <div class="title fw-bold main d-flex align-items-center gap-1 fs-6 mb-3">
+                    <i class="fa-solid fa-lock"></i>
+                    <span>
+                      سلامتك أولويتنا 
+                    </span>
+                  </div>
+                  <ul class="warning-list">
+                    <li>
+                      <p>احرص على مقابلة البائع أو المشتري في مكان عام وآمن مثل المراكز التجارية، محطات المترو، أو محطات الوقود</p>
+                    </li>
+                    <li>
+                      <p>
+                        يُفضَّل اصطحاب شخص موثوق عند إتمام المقابلة
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        تأكّد من فحص المنتج بعناية قبل الشراء، وتحقق من حالته وسعره مقارنةً بالسوق
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        لا تقم بالدفع أو التحويل المالي إلا بعد التأكد التام من مطابقة المنتج للمواصفات المُتفق عليها
+                      </p>
+                    </li>   
+                  </ul>
                 </div>
               </div>
             </div>
@@ -446,6 +610,7 @@
         </div>
       </section>
 
+      <!-- ======== related advs section ======== -->
       <section class="my-5">
         <div class="container-fluid">
           <div class="title fw-bold fs-5 mb-3">إعلانات مشابهة</div>
@@ -632,7 +797,7 @@
               </li>
             </ul>
           </div>
-          <div class="col-md-auto">
+          <div class="col-auto">
             <h5>يمكنك تحميل التطبيق</h5>
             <div class="apps-btns d-flex flex-column">
               <a href="" target="_blank" class="main-btn">
@@ -658,6 +823,84 @@
         </div>
       </div>
     </footer>
+
+    <!-- Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5 main" id="exampleModalLabel">
+              بلاغ عن إعلان
+            </h1>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="report_reason"
+                id="report_reason_1"
+              />
+              <label class="form-check-label" for="report_reason_1">
+                سلوك غير لائق من مقدم الخدمة
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="report_reason"
+                id="report_reason_2"
+              />
+              <label class="form-check-label" for="report_reason_2">
+                محتوى غير مناسب / احتيال
+              </label>
+            </div>
+            <div class="form-check">
+              <input
+                class="form-check-input"
+                type="radio"
+                name="report_reason"
+                id="report_reason_3"
+              />
+              <label class="form-check-label" for="report_reason_3">
+                مشكلة في الموقع
+              </label>
+            </div>
+            <div class="form-group">
+              <label for="" class="fw-bold my-2">سبب آخر</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="اكتب السبب"
+              />
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              اغلاق
+            </button>
+            <button type="button" class="main-btn">حفظ</button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- jQuery script -->
     <script src="js/jquery-3.6.0.min.js"></script>
