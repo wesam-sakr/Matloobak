@@ -340,7 +340,7 @@ iframe {
 }
 
 .form-control {
-   border: 1px solid var(--lite);
+   border: 1px solid #DFDFDF;
    padding: .625rem .9375rem;
    background-color: var(--white);
    color: var(--mid-dark);
@@ -1282,7 +1282,84 @@ p.description {
    color: var(--main);
 }
 
-/* --------== login page ==-------- */
+/* --------== add advertise page ==-------- */
+
+.add-advertisment .add-adv-options {
+   background: var(--white);
+   border-radius: 20px;
+   -webkit-border-radius: 20px;
+   -moz-border-radius: 20px;
+   -ms-border-radius: 20px;
+   -o-border-radius: 20px;
+   padding: 3rem 4rem;
+}
+
+.add-advertisment .add-adv-options .add-adv-title {
+   font-weight: 600;
+   color: #8F95A3;
+}
+
+.add-advertisment .add-adv-options .add-adv-subtitle {
+   color: #3E3E3E;
+}
+
+.add-advertisment .add-adv-options ul li {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   padding: 1.75rem;
+   padding-right: 0;
+   padding-left: 0;
+   font-size: 1.25rem;
+   color: #888888;
+   position: relative;
+
+}
+
+.add-advertisment .add-adv-options ul li:not(:last-child) {
+   border-bottom: 1px solid #8F95A3;
+
+}
+
+.add-advertisment .add-adv-options ul li:hover {
+   color: var(--main);
+   cursor: pointer;
+}
+.add-advertisment .add-adv-options ul li:hover p{
+   text-decoration: underline;
+
+}
+.add-advertisment .add-option{
+   display: flex;
+   align-items: center;
+   gap: .5rem
+}
+
+.add-advertisment .add-option img{
+   width: 2.5rem;
+   opacity: .75;
+   filter: grayscale(.85);
+   -webkit-filter: grayscale(.85);
+}
+.add-advertisment li:hover .add-option img{
+   opacity: 1;
+   filter: grayscale(0);
+   -webkit-filter: grayscale(0);
+}
+
+.add-advertisment .add-adv-options ul li p .advertisment-icon {
+   padding-left: 10px;
+}
+
+/* .add-advertisment label {
+   color: var(--main);
+} */
+
+.add-advertisment .check-size {
+   width: 1.1rem;
+   height: 1.1rem;
+}
+
 
 /* --------== contact page ==-------- */
 /* .contact-data {} */
