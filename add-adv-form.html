@@ -237,9 +237,63 @@
                   <label for="" class="text-secondary mb-2">
                     *نص الإعلان
                   </label>
-                  <textarea class="form-control" >
+                  <textarea class="form-control" rows="5"> </textarea>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="" class="text-secondary mb-2">
+                    *تحميل صور المنتج
+                  </label>
+                  <div class="upload-wrapper mb-3">
+                    <div class="upload__box">
+                      <div class="upload__btn-box col-md-2">
+                        <button type="button" class="upload__btn">
+                          <div class="upload_icon position-relative">
+                            <img src="images/upload-img.png" alt="" />
+                          </div>
+                          <input
+                            type="file"
+                            accept="images/*"
+                            name="media[]"
+                            multiple=""
+                            data-max_length="20"
+                            class="upload__inputfile"
+                          />
+                        </button>
+                      </div>
 
-                  </textarea>
+                      <div class="upload__media-wrap row g-3 row-cols-lg-5"></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-12">
+                <div class="form-group">
+                  <label for="" class="text-secondary mb-2">
+                    تحميل مقاطع فيديو
+                  </label>
+                  <div class="upload-wrapper mb-3">
+                    <div class="upload__box">
+                      <div class="upload__btn-box col-md-2">
+                        <button type="button" class="upload__btn">
+                          <div class="upload_icon position-relative">
+                            <img src="images/upload-vid.png" alt="" />
+                          </div>
+                          <input
+                            type="file"
+                            accept="video/*"
+                            name="media[]"
+                            multiple
+                            data-max_length="10"
+                            class="upload__inputfile"
+                          />
+                        </button>
+                      </div>
+
+                      <div class="upload__media-wrap row g-3 row-cols-lg-5"></div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>

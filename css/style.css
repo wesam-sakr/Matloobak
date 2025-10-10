@@ -1325,23 +1325,26 @@ p.description {
    color: var(--main);
    cursor: pointer;
 }
-.add-advertisment .add-adv-options ul li:hover p{
+
+.add-advertisment .add-adv-options ul li:hover p {
    text-decoration: underline;
 
 }
-.add-advertisment .add-option{
+
+.add-advertisment .add-option {
    display: flex;
    align-items: center;
    gap: .5rem
 }
 
-.add-advertisment .add-option img{
+.add-advertisment .add-option img {
    width: 2.5rem;
    opacity: .75;
    filter: grayscale(.85);
    -webkit-filter: grayscale(.85);
 }
-.add-advertisment li:hover .add-option img{
+
+.add-advertisment li:hover .add-option img {
    opacity: 1;
    filter: grayscale(0);
    -webkit-filter: grayscale(0);
@@ -1358,6 +1361,82 @@ p.description {
 .add-advertisment .check-size {
    width: 1.1rem;
    height: 1.1rem;
+}
+
+
+.upload__inputfile {
+   inset: 0;
+   opacity: 0;
+   overflow: hidden;
+   position: absolute;
+   cursor: pointer;
+}
+
+.upload__btn-box button {
+   background-color: transparent;
+   border: 1px solid #dedede;
+   width: 100%;
+   aspect-ratio: 3/2;
+   padding: .7rem;
+   border-radius: 4px;
+   margin-bottom: 0.85rem;
+   position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+
+
+.upload__btn-box .upload_icon { 
+   width: 3.5rem;
+}
+
+
+.upload__media-wrap {
+   display: flex;
+   flex-wrap: wrap;
+}
+
+.upload__media-wrap img ,
+.upload__media-wrap video {
+   max-width: 100%;
+   object-fit: cover;
+   aspect-ratio: 1/1;
+}
+
+.upload__media-box {
+   position: relative;
+   height: 100%;
+   border-radius: 10px;
+   overflow: hidden;
+   background: rgba(var(--mainOp), .05);
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+
+.upload__media-close {
+   width: 24px;
+   height: 24px;
+   border-radius: 50%;
+   background-color: rgba(0, 0, 0, 0.5);
+   position: absolute;
+   top: 10px;
+   inset-inline-start: 10px;
+   text-align: center;
+   line-height: 24px;
+   z-index: 2;
+   cursor: pointer;
+}
+
+.upload__media-close:after {
+   content: "\2716";
+   font-size: 14px;
+   color: white;
 }
 
 

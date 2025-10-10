@@ -40,6 +40,81 @@ $(document).ready(function () {
   });
 
 
+  function MediaUpload() {
+  var mediaArray = [];
+
+  $('.upload__inputfile').each(function () {
+    $(this).on('change', function (e) {
+      var mediaWrap = $(this).closest('.upload__box').find('.upload__media-wrap');
+      var maxLength = $(this).attr('data-max_length');
+      var files = Array.from(e.target.files);
+
+      files.forEach(function (file) {
+        // تأكد أنه صورة أو فيديو فقط
+        if (!file.type.match('image.*') && !file.type.match('video.*')) return;
+
+        if (mediaArray.length >= maxLength) return false;
+
+        mediaArray.push(file);
+
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          let html = "";
+
+          if (file.type.match('image.*')) {
+            html = `
+              <div class="col">
+                <div class='upload__media-box'>
+                  <div data-file='${file.name}' class='media-bg'>
+                    <div class='upload__media-close'></div>
+                    <img src='${e.target.result}' alt='image'>
+                  </div>
+                </div>
+              </div>`;
+          } else if (file.type.match('video.*')) {
+            html = `
+              <div class="col">
+                <div class='upload__media-box'>
+                  <div data-file='${file.name}' class='media-bg'>
+                    <div class='upload__media-close'></div>
+                    <video src='${e.target.result}' controls></video>
+                  </div>
+                </div>
+              </div>`;
+          }
+
+          mediaWrap.append(html);
+        };
+        reader.readAsDataURL(file);
+      });
+    });
+  });
+
+  // حذف عنصر
+  $(document).on('click', ".upload__media-close", function () {
+    var inputElement = $('.upload__inputfile')[0];
+    var fileName = $(this).parent().data("file");
+    var dt = new DataTransfer();
+
+    mediaArray = mediaArray.filter(file => file.name !== fileName);
+
+    for (var i = 0; i < inputElement.files.length; i++) {
+      if (inputElement.files[i].name !== fileName) {
+        dt.items.add(inputElement.files[i]);
+      }
+    }
+
+    inputElement.files = dt.files;
+    $(this).closest('.col').remove();
+
+    console.log("remaining files:", mediaArray);
+  });
+}
+
+MediaUpload();
+
+
+
   const inputElements = [...document.querySelectorAll("input.code")];
   inputElements.forEach((ele, index) => {
     ele.addEventListener("keydown", (e) => {
@@ -92,7 +167,7 @@ $(document).ready(function () {
     margin: 16,
     dots: true,
     rtl: dirAr,
-    
+
   })
 
   $(".related-adv .owl-carousel").owlCarousel({
