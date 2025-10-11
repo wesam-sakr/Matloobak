@@ -151,9 +151,9 @@
             <div class="" id="primaryNavbar">
               <ul class="nav">
                 <li class="nav-item">
-                  <a href="#" class="nav-link" aria-label="الكل">
+                  <a href="#" class="nav-link active" aria-label="الكل">
                     <img src="images/border-all.svg" alt="" />
-                    الكل
+                    <span>الكل</span>
                   </a>
                 </li>
 
@@ -182,6 +182,7 @@
       </div>
     </header>
 
+    <!-- ==== start breadcrumb ==== -->
     <section class="container-fluid">
       <nav style="--bs-breadcrumb-divider: '>>'" aria-label="breadcrumb">
         <ol class="breadcrumb pt-4">
@@ -189,119 +190,195 @@
             <a href="index.html" class="main">الرئيسية</a>
           </li>
           <li class="breadcrumb-item active" aria-current="page">
-            إضافة إعلان
+            الملف الشخصي
           </li>
         </ol>
       </nav>
     </section>
+    <!-- ==== end breadcrumb ==== -->
 
-    <main>
-      <!-- ======== advs details section ======== -->
-      <section class="add-advertisment my-5">
-        <div class="container-fluid">
-          <div class="add-adv-options">
-            <a href="index.html">
-              <i class="bi bi-arrow-right fs-3"></i>
-            </a>
-            <div class="row g-3">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="" class="text-secondary mb-2"
-                    >*عنوان الإعلان</label
-                  >
-                  <input type="text" class="form-control" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="" class="text-secondary mb-2">*الفئة</label>
-                  <input type="text" class="form-control" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="" class="text-secondary mb-2">*النوع</label>
-                  <input type="text" class="form-control" />
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label for="" class="text-secondary mb-2">
-                    رقم الجوال او وسيلة التواصل
-                  </label>
-                  <input type="text" class="form-control" />
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="" class="text-secondary mb-2">
-                    *نص الإعلان
-                  </label>
-                  <textarea class="form-control" rows="5"> </textarea>
-                </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="" class="text-secondary mb-2">
-                    *تحميل صور المنتج
-                  </label>
-                  <div class="upload-wrapper mb-3">
-                    <div class="upload__box">
-                      <div class="upload__btn-box col-md-2">
-                        <button type="button" class="upload__btn">
-                          <div class="upload_icon position-relative">
-                            <img src="images/upload-img.png" alt="" />
-                          </div>
-                          <input
-                            type="file"
-                            accept="image/*"
-                            name="media[]"
-                            multiple=""
-                            data-max_length="20"
-                            class="upload__inputfile"
-                          />
-                        </button>
-                      </div>
-
-                      <div class="upload__media-wrap row g-3 row-cols-lg-5"></div>
-                    </div>
+    <!-- profile -->
+    <section class="profile my-5">
+      <div class="container-fluid">
+        <div class="row">
+          <aside class="col-md-4 col-lg-3 profile-nav">
+            <div class="profile-header d-md-none">
+              <h5>الملف الشخصي</h5>
+              <button class="btn-close"></button>
+            </div>
+            <!-- user info -->
+            <div class="user-info d-flex align-items-center gap-3">
+              <!-- profile-picture -->
+              <form action="">
+                <div class="profile-pic position-relative">
+                  <img
+                    class="w-100"
+                    src="images/avatar.png"
+                    alt=""
+                    id="photo"
+                  />
+                  <div class="profile-pic-icon">
+                    <i class="bi bi-camera-fill"></i>
                   </div>
+                  <input
+                    type="file"
+                    id="file"
+                    name="photo_profile"
+                    accept="image/*"
+                  />
+                  <button type="submit" class="save_img">
+                    <i class="bi bi-check-lg"></i>
+                  </button>
                 </div>
-              </div>
-              <div class="col-12">
-                <div class="form-group">
-                  <label for="" class="text-secondary mb-2">
-                    تحميل مقاطع فيديو
-                  </label>
-                  <div class="upload-wrapper mb-3">
-                    <div class="upload__box">
-                      <div class="upload__btn-box col-md-2">
-                        <button type="button" class="upload__btn">
-                          <div class="upload_icon position-relative">
-                            <img src="images/upload-vid.png" alt="" />
-                          </div>
-                          <input
-                            type="file"
-                            accept="video/*"
-                            name="media[]"
-                            multiple
-                            data-max_length="10"
-                            class="upload__inputfile"
-                          />
-                        </button>
-                      </div>
-
-                      <div class="upload__media-wrap row g-3 row-cols-lg-5"></div>
-                    </div>
-                  </div>
-                </div>
+              </form>
+              <!-- user info -->
+              <div class="user_info">
+                <b>USERNAME</b>
+                <p>admin@gmail.com</p>
               </div>
             </div>
-            <button class="main-btn mt-4">ارسال الطلب</button>
-          </div>
+            <!-- profile navigation -->
+            <ul class="nav w-100 flex-column">
+              <li class="nav-item">
+                <a
+                  class="nav-link"
+                  aria-current="page"
+                  href="profile.html"
+                >
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-person p_nav_icon"></i>
+                    <span> تعديل بيانات الحساب </span>
+                  </div>
+                  <i class="bi bi-chevron-left"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="p_favourite.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-heart p_nav_icon"></i>
+                    <span> المفضلة </span>
+                  </div>
+                  <i class="bi bi-chevron-left"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="p_advs.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-journal-text p_nav_icon"></i>
+                    <span> إعلاناتي </span>
+                  </div>
+                  <i class="bi bi-chevron-left"></i>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link active" href="p_changePass.html">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-lock p_nav_icon"></i>
+                    <span>تغيير كلمة المرور </span>
+                  </div>
+                  <i class="bi bi-chevron-left"></i>
+                </a>
+              </li>
+
+              <li class="nav-item">
+                <form action="">
+                  <button class="nav-link">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-box-arrow-right p_nav_icon"></i>
+                      <span> تسجيل خروج </span>
+                    </div>
+                    <i class="bi bi-chevron-left"></i>
+                  </button>
+                </form>
+              </li>
+            </ul>
+          </aside>
+          <main class="col col-md-8 col-lg-9">
+            <!-- action : open profile nav @ sm media -->
+            <button id="profile_nav" class="d-md-none">
+              <p class="fs-6">الملف الشخصي</p>
+              <i class="bi bi-sliders fs-5"></i>
+            </button>
+            <!-- end -->
+            <div class="profile-data">
+              <h2 class="profile-title fs-5 fw-bold">تغيير كلمة المرور</h2>
+              <form action="" method="post">
+                <div class="row gy-3 mb-4">
+                  <div class="col-12">
+                    <div class="input-group mb-2">
+                      <span class="input-group-text pe-0">
+                        <i class="bi bi-lock"></i>
+                      </span>
+                      <input
+                        type="password"
+                        class="form-control"
+                        placeholder="كلمة المرور"
+                      />
+                      <button
+                        type="button"
+                        class="input-group-text pass bg-transparent"
+                      >
+                        <i class="bi bi-eye-slash-fill"></i>
+                      </button>
+                    </div>
+                    <a
+                      href="forgotPass.html"
+                      class="forgot text-decoration-underline"
+                      >هل نسيت كلمة المرور؟</a
+                    >
+                  </div>
+                  <div class="col-12">
+                    <div class="input-group">
+                      <span class="input-group-text pe-0">
+                        <i class="bi bi-lock"></i>
+                      </span>
+                      <input
+                        type="password"
+                        class="form-control"
+                        placeholder="كلمة المرور"
+                      />
+                      <button
+                        type="button"
+                        class="input-group-text pass bg-transparent"
+                      >
+                        <i class="bi bi-eye-slash-fill"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-12">
+                    <div class="input-group">
+                      <span class="input-group-text pe-0">
+                        <i class="bi bi-lock"></i>
+                      </span>
+                      <input
+                        type="password"
+                        name="password"
+                        class="form-control"
+                        placeholder="تأكيد كلمة المرور"
+                      />
+                      <button
+                        type="button"
+                        class="input-group-text bg-transparent pass"
+                      >
+                        <i class="bi bi-eye-slash-fill"></i>
+                      </button>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <button
+                      type="submit"
+                      class="main-btn mt-3"
+                    >
+                      حفظ وتعديل
+                    </button>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </main>
         </div>
-      </section>
-    </main>
+      </div>
+    </section>
 
     <!-- ======== subscribe section ======== -->
     <section class="subscribe py-4">

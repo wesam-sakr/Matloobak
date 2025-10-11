@@ -40,29 +40,30 @@ $(document).ready(function () {
   });
 
 
+  // upload and preview multiple media *images and videos* such as dropzone
   function MediaUpload() {
-  var mediaArray = [];
+    var mediaArray = [];
 
-  $('.upload__inputfile').each(function () {
-    $(this).on('change', function (e) {
-      var mediaWrap = $(this).closest('.upload__box').find('.upload__media-wrap');
-      var maxLength = $(this).attr('data-max_length');
-      var files = Array.from(e.target.files);
+    $('.upload__inputfile').each(function () {
+      $(this).on('change', function (e) {
+        var mediaWrap = $(this).closest('.upload__box').find('.upload__media-wrap');
+        var maxLength = $(this).attr('data-max_length');
+        var files = Array.from(e.target.files);
 
-      files.forEach(function (file) {
-        // تأكد أنه صورة أو فيديو فقط
-        if (!file.type.match('image.*') && !file.type.match('video.*')) return;
+        files.forEach(function (file) {
+          // تأكد أنه صورة أو فيديو فقط
+          if (!file.type.match('image.*') && !file.type.match('video.*')) return;
 
-        if (mediaArray.length >= maxLength) return false;
+          if (mediaArray.length >= maxLength) return false;
 
-        mediaArray.push(file);
+          mediaArray.push(file);
 
-        var reader = new FileReader();
-        reader.onload = function (e) {
-          let html = "";
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            let html = "";
 
-          if (file.type.match('image.*')) {
-            html = `
+            if (file.type.match('image.*')) {
+              html = `
               <div class="col">
                 <div class='upload__media-box'>
                   <div data-file='${file.name}' class='media-bg'>
@@ -71,8 +72,8 @@ $(document).ready(function () {
                   </div>
                 </div>
               </div>`;
-          } else if (file.type.match('video.*')) {
-            html = `
+            } else if (file.type.match('video.*')) {
+              html = `
               <div class="col">
                 <div class='upload__media-box'>
                   <div data-file='${file.name}' class='media-bg'>
@@ -81,69 +82,99 @@ $(document).ready(function () {
                   </div>
                 </div>
               </div>`;
-          }
+            }
 
-          mediaWrap.append(html);
-        };
-        reader.readAsDataURL(file);
+            mediaWrap.append(html);
+          };
+          reader.readAsDataURL(file);
+        });
       });
     });
-  });
 
-  // حذف عنصر
-  $(document).on('click', ".upload__media-close", function () {
-    var inputElement = $('.upload__inputfile')[0];
-    var fileName = $(this).parent().data("file");
-    var dt = new DataTransfer();
+    // حذف عنصر
+    $(document).on('click', ".upload__media-close", function () {
+      var inputElement = $('.upload__inputfile')[0];
+      var fileName = $(this).parent().data("file");
+      var dt = new DataTransfer();
 
-    mediaArray = mediaArray.filter(file => file.name !== fileName);
+      mediaArray = mediaArray.filter(file => file.name !== fileName);
 
-    for (var i = 0; i < inputElement.files.length; i++) {
-      if (inputElement.files[i].name !== fileName) {
-        dt.items.add(inputElement.files[i]);
+      for (var i = 0; i < inputElement.files.length; i++) {
+        if (inputElement.files[i].name !== fileName) {
+          dt.items.add(inputElement.files[i]);
+        }
       }
+
+      inputElement.files = dt.files;
+      $(this).closest('.col').remove();
+
+      console.log("remaining files:", mediaArray);
+    });
+  }
+  MediaUpload();
+
+  // verification code OTP
+  if ($('#verification-input').length > 0) {
+    const inputs = Array.from(document.getElementById("verification-input").children);
+    function getFirstEmptyIndex() {
+      return inputs.findIndex((input) => input.value === "");
     }
+    inputs.forEach((input, i) => {
+      input.addEventListener("keydown", (e) => {
+        if (e.key === "Backspace") {
+          if (input.value === "" && i > 0) {
+            inputs[i - 1].value = "";
+            inputs[i - 1].focus();
+          }
 
-    inputElement.files = dt.files;
-    $(this).closest('.col').remove();
+          for (let j = i; j < inputs.length; j++) {
+            let value = inputs[j + 1] ? inputs[j + 1].value : "";
+            inputs[j].setRangeText(value, 0, 1, "start");
+          }
+        }
 
-    console.log("remaining files:", mediaArray);
-  });
-}
+        if (e.key === "ArrowLeft" && i > 0) {
+          inputs[i - 1].focus();
+        }
 
-MediaUpload();
+        if (e.key === "ArrowRight" && i < inputs.length - 1) {
+          inputs[i + 1].focus();
+        }
+      });
 
+      input.addEventListener("input", (e) => {
+        input.value = "";
 
+        const start = getFirstEmptyIndex();
+        inputs[start].value = e.data;
 
-  const inputElements = [...document.querySelectorAll("input.code")];
-  inputElements.forEach((ele, index) => {
-    ele.addEventListener("keydown", (e) => {
-      if (e.keyCode === 8 && e.target.value === "")
-        inputElements[Math.max(0, index - 1)].focus();
+        if (start + 1 < inputs.length) inputs[start + 1].focus();
+      });
+
+      input.addEventListener("paste", (e) => {
+        e.preventDefault();
+
+        const text = (event.clipboardData || window.clipboardData).getData("text");
+        const firstEmpty = getFirstEmptyIndex();
+        const start = firstEmpty !== -1 ? Math.min(i, firstEmpty) : i;
+
+        for (let i = 0; start + i < inputs.length && i < text.length; i++) {
+          inputs[start + i].value = text.charAt(i);
+        }
+
+        inputs[Math.min(start + text.length, inputs.length - 1)].focus();
+      });
+
+      input.addEventListener("focus", () => {
+        const start = getFirstEmptyIndex();
+        if (start !== -1 && i > start) inputs[start].focus();
+      });
     });
-    ele.addEventListener("input", (e) => {
-      inputElements[index].focus();
-      const [first, ...rest] = e.target.value;
-      e.target.value = first ?? ""; // first will be undefined when backspace was entered, so set the input to ""
-      const lastInputBox = index === inputElements.length - 1;
-      const didInsertContent = first !== undefined;
-      if (didInsertContent && !lastInputBox) {
-        inputElements[index + 1].focus();
-        inputElements[index + 1].value = rest.join("");
-        inputElements[index + 1].dispatchEvent(new Event("input"));
-      }
-    });
-  });
-
-  function onSubmit(e) {
-    e.preventDefault();
-    const code = inputElements.map(({ value }) => value).join("");
-    console.log(code);
   }
 
   // toggle password type
   $('.pass').click(function () {
-    $(this).children('i').toggleClass("bi-unlock bi-lock");
+    $(this).children('i').toggleClass("bi-eye-fill bi-eye-slash-fill");
     var pass = $(this).closest('.input-group').find('input')[0];
     console.log(pass);
     if (pass.type == "password") {
@@ -153,7 +184,23 @@ MediaUpload();
     }
   })
 
-  $('.adv-assets .owl-carousel').on('initialized.owl.carousel changed.owl.carousel', function (e) {
+  // toggle filter and profile in responsive
+  $("#filter").click(function () {
+    $(".filter").toggleClass("filter-toggle");
+  });
+  $(".filter-header .btn-close").click(function () {
+    $(".filter").toggleClass("filter-toggle");
+  });
+
+  $("#profile_nav").click(function () {
+    $(".profile-nav").toggleClass("Pnav-toggle");
+  });
+  $(".profile-header .btn-close").click(function () {
+    $(".profile-nav").toggleClass("Pnav-toggle");
+  });
+
+  // carousels
+    $('.adv-assets .owl-carousel').on('initialized.owl.carousel changed.owl.carousel', function (e) {
     if (!e.namespace) {
       return;
     }
@@ -191,29 +238,7 @@ MediaUpload();
     }
   })
 
-  $(".add-address").click(function () {
-    if ($(".form-address").css("display") == "block") {
-      $(".form-address").hide();
-    } else {
-      $(".form-address").show();
-    }
-  });
-
-  $("#filter").click(function () {
-    $(".filter").toggleClass("filter-toggle");
-  });
-  $(".filter-header .btn-close").click(function () {
-    $(".filter").toggleClass("filter-toggle");
-  });
-
-  $("#profile_nav").click(function () {
-    $(".profile-nav").toggleClass("Pnav-toggle");
-  });
-  $(".profile-header .btn-close").click(function () {
-    $(".profile-nav").toggleClass("Pnav-toggle");
-  });
-
-  /* -------------- upload profile pic ---------------- */
+  // upload profile pic 
   if ($(".profile-pic").length > 0) {
     const imgDiv = document.querySelector(".profile-pic");
     const img = document.querySelector("#photo");
@@ -230,7 +255,7 @@ MediaUpload();
           img.setAttribute("src", reader.result);
         });
         reader.readAsDataURL(choosedFile);
-        $('#change_pic').css("display", 'inline-block');
+        $('.profile-pic .save_img').css("opacity", 1);
       }
     });
   }
