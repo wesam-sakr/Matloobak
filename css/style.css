@@ -468,6 +468,53 @@ textarea {
    border-bottom: 2px solid;
 }
 
+.pagination {
+   margin: 3rem auto 0;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+   overflow: hidden;
+   width: fit-content;
+   box-shadow: 0px 3px 6px #B4B4B41C;
+   border: 1px solid #EBEBEB;
+   border-radius: 35px;
+   padding: .5rem 1.5rem;
+   background-color: var(--main)
+}
+
+.page-item {
+   border-radius: 0 !important;
+   -webkit-border-radius: 0 !important;
+   -moz-border-radius: 0 !important;
+   -ms-border-radius: 0 !important;
+   -o-border-radius: 0 !important;
+   background: transparent;
+}
+
+.page-link {
+   padding: 0;
+   background: transparent;
+   border: unset !important;
+   color: var(--white);
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 30px;
+   height: 30px;
+   border-radius: 50% !important;
+   -webkit-border-radius: 50% !important;
+   -moz-border-radius: 50% !important;
+   -ms-border-radius: 50% !important;
+   -o-border-radius: 50% !important;
+   -webkit-border-radius: 50%;
+}
+
+.current>.page-link,
+.page-link.current {
+   background: var(--secondary);
+   color: var(--main) !important;
+}
+
 html[dir='ltr'] [class*='bi-chevron']::before,
 html[dir='ltr'] [class*='fa-chevron'] {
    transform: rotate(180deg);
@@ -812,9 +859,14 @@ footer .logo img {
    color: #636363;
 }
 
+.advertisements .card .card-body .ad-info i {
+   margin-inline-end: 2px;
+}
+
 .advertisements .adv-img img {
    width: 17.5rem;
    object-fit: cover;
+   aspect-ratio: 15 / 8;
    border-radius: 8px;
    -webkit-border-radius: 8px;
    -moz-border-radius: 8px;
@@ -912,6 +964,26 @@ footer .logo img {
 .breadcrumb-item.active {
    color: var(--main);
    font-weight: bold;
+}
+
+
+.loading-indicator {
+   position: relative;
+   width: fit-content;
+   margin-inline: auto;
+}
+
+.loading-indicator p {
+   position: absolute;
+   inset: 0;
+   background: var(--main);
+   color: var(--white) !important;
+   padding: 10px 48px;
+   display: block;
+   text-align: center;
+   border-radius: 10px;
+   cursor: not-allowed;
+   z-index: 1009;
 }
 
 /* ---------------------------------- */
@@ -1577,6 +1649,7 @@ p.description {
    color: var(--white);
 }
 
+.login-form,
 .profile-data {
    padding: 3rem 3rem;
    background: #FCFCFC 0% 0% no-repeat padding-box;
@@ -1649,7 +1722,7 @@ p.description {
    opacity: 0;
 }
 
-.profile .profile-title {
+.profile-title {
    border-bottom: 1px solid rgba(var(--blackOp), .1);
    padding-bottom: 1rem;
    margin-bottom: 2rem;
@@ -1719,6 +1792,48 @@ p.description {
    font-size: .8rem;
 }
 
+
+/*==-------- login page  --------==*/
+.login {
+   position: relative;
+   background: url('../images/login_bg.png');
+   background-size: cover;
+   background-position: bottom center;
+}
+
+.login-form {
+   background: var(--white);
+   position: relative;
+   width: 50%;
+   margin: auto;
+}
+
+#verification-input {
+   direction: ltr;
+   margin-bottom: 1.5rem;
+   text-align: center;
+}
+
+#verification-input>input {
+   width: 55px;
+   height: 55px;
+   margin: 0 6px;
+   font-size: 18px;
+   border-radius: 12px;
+   text-align: center;
+   background: transparent;
+   border: 1px solid #e9e9e9;
+   -webkit-border-radius: 12px;
+   -moz-border-radius: 12px;
+   -ms-border-radius: 12px;
+   -o-border-radius: 12px;
+}
+
+
+.forgot {
+   font-size: 12px;
+}
+
 /* --------== terms page ==-------- */
 
 .terms p {
@@ -1744,14 +1859,15 @@ p.description {
    footer .main-links li {
       width: 40%;
    }
-   .advertisements.my_adv .card .card-body>.row {
-   flex-direction: row-reverse;
-}
 
-.advertisements.my_adv .adv-img img {
-   width: 8rem;
-   aspect-ratio: 5/5;
-}
+   .advertisements.my_adv .card .card-body>.row {
+      flex-direction: row-reverse;
+   }
+
+   .advertisements.my_adv .adv-img img {
+      width: 8rem;
+      aspect-ratio: 5/5;
+   }
 }
 
 /* الشاشات الأكبر (مثلاً 4K) */
@@ -1895,7 +2011,7 @@ p.description {
 
    }
 
-
+   .login-form,
    .profile-data {
       padding: 3rem 1.25rem;
    }
@@ -2000,8 +2116,6 @@ p.description {
    .intro .overlay .choose {
       width: 80%;
    }
-
-
 
    .discoverOffer {
       padding: 3rem 1.5rem;
