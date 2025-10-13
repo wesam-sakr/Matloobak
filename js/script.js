@@ -15,7 +15,8 @@ $(document).ready(function () {
 
   $('#loading').fadeOut(500);
 
-  $('select').niceSelect();
+  $('.search-box select').niceSelect();
+  // $('.add-advertisment select').select2();
 
   $(".fav").click(function () {
     $(this).find("i").toggleClass("bi-heart bi-heart-fill");
@@ -39,6 +40,20 @@ $(document).ready(function () {
     $('html, body').animate({ scrollTop: 0 }, '300');
   });
 
+  // share copy link
+  if ($('.copy-text').length > 0) {
+    let copyText = document.querySelector(".copy-text");
+    copyText.querySelector("button").addEventListener("click", function () {
+      let input = copyText.querySelector("input.text");
+      input.select();
+      document.execCommand("copy");
+      copyText.classList.add("active");
+      window.getSelection().removeAllRanges();
+      setTimeout(function () {
+        copyText.classList.remove("active");
+      }, 2500);
+    });
+  }
 
   // upload and preview multiple media *images and videos* such as dropzone
   function MediaUpload() {

@@ -376,10 +376,9 @@ iframe {
 
 .form-select {
    font-size: 1.1rem;
-   border: 1px solid var(--lite);
+   border: 1px solid #DFDFDF;
    padding: 10px 15px;
    background-color: var(--white);
-   color: var(--mid-dark);
    background-position: start 0.75rem center;
 }
 
@@ -387,10 +386,33 @@ iframe {
    font-size: 1.1rem;
    padding: 10px 15px;
    background-color: var(--white);
-   color: var(--mid-dark);
-   border: 1px solid var(--mint);
    box-shadow: white;
    background-position: start 0.75rem center;
+}
+
+
+.select2-selection {
+   border: 1px solid #DFDFDF !important;
+   height: 48.75px !important;
+   border-radius: 6px !important;
+   -webkit-border-radius: 6px !important;
+   -moz-border-radius: 6px !important;
+   -ms-border-radius: 6px !important;
+   -o-border-radius: 6px !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__rendered {
+   line-height: 48px !important;
+}
+
+.select2-selection:focus {
+   border-color: var(--main) !important;
+}
+
+.select2-container--default .select2-selection--single .select2-selection__arrow {
+   height: 45.75px;
+   inset-inline-end: 6px !important;
+   inset-inline-start: unset !important;
 }
 
 .form-check {
@@ -713,7 +735,7 @@ footer .logo img {
    width: 4.06rem;
 }
 
-.bottom-bar .search-box {
+.search-box {
    display: flex;
    align-items: center;
    flex: 1;
@@ -744,7 +766,7 @@ footer .logo img {
    position: relative;
 }
 
-.bottom-bar .search-box .current::before {
+.search-box .current::before {
    content: '';
    position: absolute;
    top: 50%;
@@ -770,7 +792,7 @@ footer .logo img {
    height: .3125rem;
 }
 
-.bottom-bar .search-box .nice-select::before {
+.search-box .nice-select::before {
    content: '';
    position: absolute;
    inset-inline-start: 12px;
@@ -783,7 +805,7 @@ footer .logo img {
    background: var(--main);
 }
 
-.bottom-bar .search-box input {
+.search-box input {
    width: 100%;
    height: 100%;
    padding: 0 12px 0 40px;
@@ -794,7 +816,7 @@ footer .logo img {
 }
 
 
-.bottom-bar .search-box button {
+.search-box button {
    position: absolute;
    inset-inline-end: 0;
    top: 0;
@@ -806,7 +828,7 @@ footer .logo img {
    cursor: pointer;
 }
 
-.bottom-bar .search-box i {
+.search-box i {
    position: absolute;
    left: 15px;
    top: 50%;
@@ -1353,6 +1375,77 @@ p.description {
    color: var(--main);
 }
 
+/* --------== advertiser ads page ==-------- */
+
+.copy-text {
+   position: relative;
+   padding: 10px 8px;
+   min-height: 62px;
+   display: flex;
+   border-radius: 6px;
+   justify-content: space-between;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   -ms-border-radius: 6px;
+   -o-border-radius: 6px;
+   border: 1px solid var(--main);
+}
+
+.copy-text input.text {
+   color: #555;
+   border: none;
+   outline: 0
+}
+
+.copy-text button {
+   color: var(--main);
+   border: none;
+   outline: 0;
+   cursor: pointer;
+   border-radius: 6px;
+   background: var(--white);
+}
+
+.copy-text::before {
+   content: attr(data-text);
+   position: absolute;
+   top: -38px;
+   inset-inline-end: 0px;
+   padding: 6px 14px;
+   border-radius: 6px;
+   font-size: 14px;
+   z-index: 2;
+   display: none;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   -ms-border-radius: 6px;
+   -o-border-radius: 6px;
+}
+
+.copy-text::after {
+   content: "";
+   position: absolute;
+   top: -12px;
+   inset-inline-end: 28px;
+   width: 10px;
+   height: 10px;
+   transform: rotate(45deg);
+   display: none;
+   z-index: 1
+}
+
+.copy-text::after,
+.copy-text::before {
+   color: var(--white);
+   z-index: 3;
+   background: var(--main);
+}
+
+.copy-text.active::after,
+.copy-text.active::before {
+   display: block;
+}
+
 /* --------== add advertise page ==-------- */
 
 .add-advertisment .add-adv-options {
@@ -1868,6 +1961,12 @@ p.description {
       width: 8rem;
       aspect-ratio: 5/5;
    }
+
+   .advertiser-ads .advertiser-img {
+      width: 75%;
+      height: unset;
+      aspect-ratio: 1/1;
+   }
 }
 
 /* الشاشات الأكبر (مثلاً 4K) */
@@ -1995,7 +2094,13 @@ p.description {
    }
 
    .advertisements .card .card-body>.row {
-      flex-direction: column-reverse;
+      flex-direction: row-reverse;
+   }
+   .advertisements .card .card-body>.row [class^="col"]{
+      order: 2;
+   }
+   .advertisements .card .card-body>.row .col-12.col-sm-auto {
+      order: 1;
    }
 
    .advertisements .card .card-body {
