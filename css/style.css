@@ -1606,37 +1606,28 @@ p.description {
 
 /* --------== contact page ==-------- */
 
-.contact-data .form-control,
-.contact-data textarea {
-   background: #FCFCFC;
-   border: 1px solid var(--border);
-   border-radius: 5px;
+.contact .accordion-item {
+   margin-bottom: 1.25rem;
+   border: 1px solid #EEEEEE !important;
+border-radius: 15px;
+overflow: hidden;
+}
+.contact .accordion-item .accordion-body{
+   background: #DCF8C6;
+   border-top: 1px solid #d0d0d0  !important;
+   color: #636363;
+}
+.contact .accordion-item .accordion-header{
+
+   border-radius: 15px;
+}
+.contact .accordion-button{
+   font-weight: bold;
+   box-shadow: unset !important;
 }
 
-
-.contact-data .form-control:focus,
-.contact-data textarea:focus {
-   border-color: var(--main);
-}
-
-.contact-data textarea {
-   width: 100%;
-   padding: 10px 15px;
-}
-
-.contact .map {
-   overflow: hidden;
-   border-radius: 10px;
-   -webkit-border-radius: 10px;
-   -moz-border-radius: 10px;
-   -ms-border-radius: 10px;
-   -o-border-radius: 10px;
-   height: 100%;
-}
-
-.contact .map iframe {
-   height: 100%;
-   min-height: 300px;
+.contact .accordion-button:not(.collapsed) {
+    background-color: #DCF8C6;
 }
 
 /* --------== products page ==-------- */
@@ -1742,6 +1733,7 @@ p.description {
    color: var(--white);
 }
 
+.wrapper-box,
 .login-form,
 .profile-data {
    padding: 3rem 3rem;
@@ -1893,6 +1885,7 @@ p.description {
    background-position: bottom center;
 }
 
+.wrapper-box,
 .login-form {
    background: var(--white);
    position: relative;
@@ -2049,6 +2042,11 @@ p.description {
       justify-content: space-between;
    }
 
+   .wrapper-box,
+   .login-form {
+      width: 80%;
+   }
+
 }
 
 @media (max-width: 768px) {
@@ -2095,9 +2093,11 @@ p.description {
    .advertisements .card .card-body>.row {
       flex-direction: row-reverse;
    }
-   .advertisements .card .card-body>.row [class^="col"]{
+
+   .advertisements .card .card-body>.row [class^="col"] {
       order: 2;
    }
+
    .advertisements .card .card-body>.row .col-12.col-sm-auto {
       order: 1;
    }
@@ -2115,9 +2115,15 @@ p.description {
 
    }
 
+   .wrapper-box,
    .login-form,
    .profile-data {
       padding: 3rem 1.25rem;
+   }
+
+   .wrapper-box,
+   .login-form {
+      width: 100%;
    }
 
    /* .bottom-bar {
