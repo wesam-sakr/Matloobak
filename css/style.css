@@ -1609,25 +1609,78 @@ p.description {
 .contact .accordion-item {
    margin-bottom: 1.25rem;
    border: 1px solid #EEEEEE !important;
-border-radius: 15px;
-overflow: hidden;
+   border-radius: 15px;
+   overflow: hidden;
 }
-.contact .accordion-item .accordion-body{
+
+.contact .accordion-item .accordion-body {
    background: #DCF8C6;
-   border-top: 1px solid #d0d0d0  !important;
+   border-top: 1px solid #d0d0d0 !important;
    color: #636363;
 }
-.contact .accordion-item .accordion-header{
 
+.contact .accordion-item .accordion-header {
    border-radius: 15px;
 }
-.contact .accordion-button{
+
+.contact .accordion-button {
    font-weight: bold;
    box-shadow: unset !important;
 }
 
 .contact .accordion-button:not(.collapsed) {
-    background-color: #DCF8C6;
+   background-color: #DCF8C6;
+}
+
+
+
+/* --------== common que page ==-------- */
+
+.common-que .accordion-item {
+   margin-bottom: 1.25rem;
+   padding: 1.5rem;
+   border: unset !important;
+   border-radius: 10px;
+   overflow: hidden;
+   -webkit-border-radius: 10px;
+   -moz-border-radius: 10px;
+   -ms-border-radius: 10px;
+   -o-border-radius: 10px;
+}
+.common-que .accordion-item:has(.accordion-button:not(.collapsed)) {
+   background-color: #F2F4FA;
+
+}
+
+.common-que .accordion-item .accordion-body {
+   background: #F2F4FA;
+   color: #636363;
+   padding-top: .5rem;
+   background: transparent;
+}
+
+.common-que .accordion-item .accordion-header {
+   border-radius: 15px;
+   -webkit-border-radius: 15px;
+   -moz-border-radius: 15px;
+   -ms-border-radius: 15px;
+   -o-border-radius: 15px;
+   background: transparent;
+}
+
+.common-que .accordion-button {
+   font-weight: bold;
+   box-shadow: unset !important;
+   display: flex;
+   align-items: center;
+   gap: .7rem;
+}
+.common-que .accordion-button img{
+   width: 1.8rem;
+}
+
+.common-que .accordion-button:not(.collapsed) {
+   background-color: transparent;
 }
 
 /* --------== products page ==-------- */
